@@ -1,8 +1,8 @@
 /* General page styling */
 body {
-    font-family: 'Bubblegum Sans', cursive; /* Unified font */
+    font-family: 'Bubblegum Sans', cursive;
     text-align: center;
-    background: linear-gradient(to bottom right, #ffe6f0, #e6f3ff); /* Pastel pink to blue */
+    background: linear-gradient(to bottom right, #ffe6f0, #e6f3ff);
     margin: 0;
     padding: 20px;
     min-height: 100vh;
@@ -10,7 +10,7 @@ body {
 
 /* Navigation bar */
 nav {
-    background: linear-gradient(to right, #ff99cc, #99ccff); /* Pink to blue gradient */
+    background: linear-gradient(to right, #ff99cc, #99ccff);
     padding: 15px;
     margin-bottom: 30px;
     border-radius: 15px;
@@ -19,23 +19,23 @@ nav {
 
 nav a {
     font-family: 'Bubblegum Sans', cursive;
-    color: #ffffff; /* White */
+    color: #ffffff;
     text-decoration: none;
     margin: 0 20px;
-    font-size: 24px; /* Larger for nav */
+    font-size: 24px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #ffff99; /* Yellow on hover */
+    color: #ffff99;
 }
 
 /* Headings */
 h1 {
     font-family: 'Bubblegum Sans', cursive;
-    color: #ff66b3; /* Bright pink */
-    font-size: 40px; /* Biggest for emphasis */
+    color: #ff66b3;
+    font-size: 40px;
     margin-bottom: 20px;
 }
 
@@ -43,8 +43,8 @@ h1 {
 button {
     font-family: 'Bubblegum Sans', cursive;
     padding: 12px 25px;
-    font-size: 20px; /* Medium-large for button */
-    background: #ffccff; /* Pastel pink */
+    font-size: 20px;
+    background: #ffccff;
     color: #333;
     border: 2px solid #ff99cc;
     border-radius: 10px;
@@ -54,24 +54,33 @@ button {
 }
 
 button:hover {
-    background: #99ccff; /* Pastel blue */
+    background: #99ccff;
     transform: scale(1.05);
 }
 
-/* Meme container */
-#meme-container, #daily-meme {
+/* Meme container for CAT MEMES */
+#meme-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     justify-items: center;
     padding: 0 10px;
 }
 
-/* Individual memes */
+/* Meme container for CAT OF THE DAY */
+#daily-meme {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: 500px; /* Space for larger meme */
+}
+
+/* Individual memes for CAT MEMES */
 .meme {
-    max-width: 180px; /* Small size */
+    max-width: 180px;
     height: auto;
-    border: 3px solid #ffccff; /* Pink border */
+    border: 3px solid #ffccff;
     border-radius: 12px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
@@ -81,21 +90,30 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* Meme captions */
-#meme-container p, #daily-meme p {
+/* Larger meme for CAT OF THE DAY */
+#daily-meme .meme {
+    max-width: 400px; /* Bigger size */
+    border: 4px solid #ff99cc; /* Thicker pink border */
+    border-radius: 15px;
+}
+
+/* Meme captions for CAT MEMES */
+#meme-container p {
     font-family: 'Bubblegum Sans', cursive;
-    font-size: 14px; /* Smaller for captions */
+    font-size: 14px;
     margin: 8px 0 0;
-    color: #ff66b3; /* Pink default */
+    color: #ff66b3;
 }
 
-/* Alternate colors for random meme captions */
 #meme-container p:nth-child(odd) {
-    color: #66ccff; /* Blue for odd */
+    color: #66ccff;
 }
 
-/* Daily meme caption */
+/* Caption for CAT OF THE DAY */
 #daily-meme p {
-    color: #ff99cc; /* Softer pink */
-    font-size: 16px; /* Slightly larger for daily */
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 24px; /* Larger for emphasis */
+    color: #ff99cc; /* Soft pink */
+    margin: 0 0 10px 0; /* Space below text, above meme */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
