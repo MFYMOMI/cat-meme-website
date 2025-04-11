@@ -1,5 +1,5 @@
 // API for random cat images
-const CAT_API = 'https://api.thecatapi.com/v1/images/search?limit=10'; // 10 images per request
+const CAT_API = 'https://api.thecatapi.com/v1/images/search?limit=10';
 const DAILY_KEY = 'dailyCatMeme';
 
 // Random caption generator for memes
@@ -19,10 +19,8 @@ const captions = [
 // Generate 50 random memes for CAT MEMES page
 async function generateMemes() {
     const container = document.getElementById('meme-container');
-    container.innerHTML = ''; // Clear previous memes
-
+    container.innerHTML = '';
     try {
-        // Fetch 10 images 5 times to get 50 total
         for (let i = 0; i < 5; i++) {
             const response = await fetch(CAT_API);
             const data = await response.json();
@@ -51,7 +49,6 @@ function generateDailyMeme() {
     const storedDate = localStorage.getItem(DAILY_KEY + '_date');
     let memeUrl = localStorage.getItem(DAILY_KEY);
 
-    // If no meme or new day, fetch a new one
     if (!memeUrl || storedDate !== today) {
         fetch('https://api.thecatapi.com/v1/images/search')
             .then(response => response.json())
@@ -70,21 +67,19 @@ function generateDailyMeme() {
 function displayDailyMeme(url) {
     const container = document.getElementById('daily-meme');
     container.innerHTML = '';
+    const caption = document.createElement('p');
+    caption.textContent = 'Congrats! Another day survived!';
     const img = document.createElement('img');
     img.src = url;
     img.className = 'meme';
     img.alt = 'Cat of the day';
-    const caption = document.createElement('p');
-    caption.textContent = 'Another day survived!';
-    container.appendChild(img);
     container.appendChild(caption);
+    container.appendChild(img);
 }
 
 // Run appropriate function based on page
 if (document.getElementById('meme-container')) {
-    // CAT MEMES page
     generateMemes();
 } else if (document.getElementById('daily-meme')) {
-    // CAT OF THE DAY page
     generateDailyMeme();
 }
