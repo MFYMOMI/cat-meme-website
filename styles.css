@@ -1,0 +1,101 @@
+/* General page styling */
+body {
+    font-family: 'Bubblegum Sans', cursive; /* Unified font */
+    text-align: center;
+    background: linear-gradient(to bottom right, #ffe6f0, #e6f3ff); /* Pastel pink to blue */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Navigation bar */
+nav {
+    background: linear-gradient(to right, #ff99cc, #99ccff); /* Pink to blue gradient */
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    font-family: 'Bubblegum Sans', cursive;
+    color: #ffffff; /* White */
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 24px; /* Larger for nav */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffff99; /* Yellow on hover */
+}
+
+/* Headings */
+h1 {
+    font-family: 'Bubblegum Sans', cursive;
+    color: #ff66b3; /* Bright pink */
+    font-size: 40px; /* Biggest for emphasis */
+    margin-bottom: 20px;
+}
+
+/* Button */
+button {
+    font-family: 'Bubblegum Sans', cursive;
+    padding: 12px 25px;
+    font-size: 20px; /* Medium-large for button */
+    background: #ffccff; /* Pastel pink */
+    color: #333;
+    border: 2px solid #ff99cc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    background: #99ccff; /* Pastel blue */
+    transform: scale(1.05);
+}
+
+/* Meme container */
+#meme-container, #daily-meme {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    justify-items: center;
+    padding: 0 10px;
+}
+
+/* Individual memes */
+.meme {
+    max-width: 180px; /* Small size */
+    height: auto;
+    border: 3px solid #ffccff; /* Pink border */
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.meme:hover {
+    transform: scale(1.1);
+}
+
+/* Meme captions */
+#meme-container p, #daily-meme p {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 14px; /* Smaller for captions */
+    margin: 8px 0 0;
+    color: #ff66b3; /* Pink default */
+}
+
+/* Alternate colors for random meme captions */
+#meme-container p:nth-child(odd) {
+    color: #66ccff; /* Blue for odd */
+}
+
+/* Daily meme caption */
+#daily-meme p {
+    color: #ff99cc; /* Softer pink */
+    font-size: 16px; /* Slightly larger for daily */
+}
